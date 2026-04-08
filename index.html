@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>日報ジェネレーター | Premium Daily Report</title>
+    <meta name="description" content="モダンで美しいデザインの日報作成ツールです。毎日の振り返りを効率的に！">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-elements">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <main class="container">
+        <header>
+            <h1>Daily Report<span> 日報ジェネレーター</span></h1>
+            <p>1日の業務を振り返り、美しいフォーマットで出力します。</p>
+        </header>
+
+        <div class="app-layout">
+            <section class="glass-card form-section">
+                <form id="report-form">
+                    <div class="form-group">
+                        <label for="goal">🎯 目標</label>
+                        <input type="text" id="goal" placeholder="本日の大目標を入力してください" autocomplete="off">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="todo">📋 やること</label>
+                        <textarea id="todo" rows="3" placeholder="- Aプロジェクトの実装&#10;- B様へのメール返信"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="done">✅ できたこと</label>
+                        <textarea id="done" rows="3" placeholder="予定通りAプロジェクトの実装を完了しました。"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="undone">⚠️ できなかったこと</label>
+                        <textarea id="undone" rows="3" placeholder="B様へのメール返信が間に合いませんでした。"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="reason">💡 その理由（できなかったこと）</label>
+                        <textarea id="reason" rows="2" placeholder="緊急のMTGが入り、時間が取れなかったため。"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>⭐ 達成度</label>
+                        <div class="rating" id="rating-container">
+                            <input type="radio" id="star5" name="rating" value="5" /><label for="star5" title="5">5</label>
+                            <input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="4">4</label>
+                            <input type="radio" id="star3" name="rating" value="3" checked /><label for="star3" title="3">3</label>
+                            <input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="2">2</label>
+                            <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="1">1</label>
+                        </div>
+                    </div>
+                </form>
+            </section>
+
+            <section class="glass-card preview-section">
+                <h2>プレビュー</h2>
+                <div class="preview-box">
+                    <pre id="preview-output"></pre>
+                </div>
+                <button id="copy-btn" class="primary-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                    <span>クリップボードにコピー</span>
+                </button>
+                <div id="copy-feedback" class="copy-feedback">コピーしました！✨</div>
+            </section>
+        </div>
+    </main>
+    <script src="main.js"></script>
+</body>
+</html>
